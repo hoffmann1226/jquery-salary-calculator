@@ -10,6 +10,9 @@ function init(){
     console.log('in jq')
     //setup button click event handler
     $('#submitBtn').on('click', handleSubmitClick)
+
+    //set up event handler for the delete button
+    $('#employeeOut').on('click', 'deleteBtn', deleteRow)
 }
 
 function handleSubmitClick(){
@@ -42,10 +45,14 @@ function addEmployee(fName, lName, id, jTitle, annSal){
     $('#jobTitle').val('');
     $('#annualSalary').val('')
 
+    //call display Employees
     displayEmployees(arrayOfEmployees)
+
+    //call display total monthly cost
+    totalCost(arrayOfEmployees)
 }
 
-//display the new inventory
+//display the new arrayOfEmployees
 function displayEmployees(arrayOfEmployees){
     console.log('in display employees')
     //target employeeOut by id
@@ -67,3 +74,18 @@ function displayEmployees(arrayOfEmployees){
 
 }
 
+//display the total monthly cost of employees
+function totalCost(arrayOfEmployees){
+    //declare monthly cost
+    let monthlyCost = 0
+    //loop through array of objects.  Pull the salary divide it by 12 and add to total cost
+    for(let i=0; i<arrayOfEmployees.length; i++){
+            monthlyCost= monthlyCost + (Number(arrayOfEmployees[i].annSal))/12
+    }
+    console.log(monthlyCost)
+}
+
+//make the delete button delete the row
+function deleteRow(){
+    console.log('delete clicked')
+}
