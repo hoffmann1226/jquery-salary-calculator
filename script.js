@@ -94,6 +94,5 @@ function totalCost(arrayOfEmployees){
 //make the delete button delete the row
 function deleteRow(){
     console.log('delete clicked')
-    const el = $( '#employeeOut');
-    el.empty()  
+    $ (this).parent().parent().remove()
 }
