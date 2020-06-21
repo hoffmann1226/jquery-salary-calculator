@@ -13,7 +13,7 @@ function init(){
     $('#submitBtn').on('click', handleSubmitClick)
 
     //set up event handler for the delete button
-    $('#employeeOut').on('click', '#deleteBtn', deleteRow)
+    $('#employeeOut').on('click', '.deleteBtn', deleteRow)
 }
 
 //this is called when the submit button is clicked
@@ -58,19 +58,19 @@ function addEmployee(fName, lName, id, jTitle, annSal){
 function displayEmployees(arrayOfEmployees){
     console.log('in display employees')
     //target employeeOut by id
-    const el = $( '#employeeOut');
-    el.empty();
+    $('#employeeOut').empty();
     //loop through arrayOfEmployees
     for(let i=0; i<arrayOfEmployees.length; i++){
         //append each to the table in the DOM
-    el.append( `<tr>
+    let p= `<tr>
     <td>${arrayOfEmployees[i].fName}</td> 
     <td>${arrayOfEmployees[i].lName}</td> 
     <td>${arrayOfEmployees[i].id}</td>
     <td>${arrayOfEmployees[i].jTitle}</td>
     <td>${arrayOfEmployees[i].annSal}</td>
-    <td><button id="deleteBtn">Delete</button></td>
-    </tr>`)
+    <td><button class="deleteBtn">Delete</button></td>
+    </tr>`
+    $('#employeeOut').append(p);
     }
 
 
@@ -94,4 +94,6 @@ function totalCost(arrayOfEmployees){
 //make the delete button delete the row
 function deleteRow(){
     console.log('delete clicked')
+    const el = $( '#employeeOut');
+    el.empty()  
 }
