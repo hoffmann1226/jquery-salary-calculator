@@ -18,13 +18,28 @@ function handleSubmitClick(){
     event.preventDefault();
 
     //get inputs/create object and call addEmployee
-    let person = {
-        fName: $('#firstName').val(),
-        lName: $('#lastName').val(),
-        id: $('#idNumber').val(),
-        jtitle: $('#jobTitle').val(),
-        annSal: $('#annualSalary').val()
-    }
-    console.log(person)
+   
+    let fName= $('#firstName').val();
+    let lName= $('#lastName').val();
+    let id= $('#idNumber').val();
+    let jTitle= $('#jobTitle').val();
+    let  annSal= $('#annualSalary').val()
+
+    addEmployee(fName, lName, id, jTitle, annSal)
+    console.log('array is now', arrayOfEmployees)
+}
+
+function addEmployee(fName, lName, id, jTitle, annSal){
+    
+    //create an array using inputs from DOM
+    let object = {fName, lName, id, jTitle, annSal}
+    arrayOfEmployees.push(object)
+
+    //clear input fields
+    $('#firstName').val('');
+    $('#lastName').val('');
+    $('#idNumber').val('');
+    $('#jobTitle').val('');
+    $('#annualSalary').val('')
 }
 
