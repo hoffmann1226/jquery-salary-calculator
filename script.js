@@ -8,13 +8,15 @@ $(document).ready(init)
 
 function init(){
     console.log('in jq')
+    
     //setup button click event handler
     $('#submitBtn').on('click', handleSubmitClick)
 
     //set up event handler for the delete button
-    $('#employeeOut').on('click', 'deleteBtn', deleteRow)
+    $('#employeeOut').on('click', '#deleteBtn', deleteRow)
 }
 
+//this is called when the submit button is clicked
 function handleSubmitClick(){
     //verify that click works
     console.log('submit button works')
@@ -52,7 +54,7 @@ function addEmployee(fName, lName, id, jTitle, annSal){
     totalCost(arrayOfEmployees)
 }
 
-//display the new arrayOfEmployees
+//display the new arrayOfEmployees on the DOM
 function displayEmployees(arrayOfEmployees){
     console.log('in display employees')
     //target employeeOut by id
@@ -67,7 +69,7 @@ function displayEmployees(arrayOfEmployees){
     <td>${arrayOfEmployees[i].id}</td>
     <td>${arrayOfEmployees[i].jTitle}</td>
     <td>${arrayOfEmployees[i].annSal}</td>
-    <td><button type="text"id=deleteBtn >Delete</button></td>
+    <td><button id="deleteBtn">Delete</button></td>
     </tr>`)
     }
 
