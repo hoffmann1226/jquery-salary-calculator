@@ -41,5 +41,27 @@ function addEmployee(fName, lName, id, jTitle, annSal){
     $('#idNumber').val('');
     $('#jobTitle').val('');
     $('#annualSalary').val('')
+
+    displayEmployees(arrayOfEmployees)
+}
+
+//display the new inventory
+function displayEmployees(arrayOfEmployees){
+    console.log('in display employees')
+    //target employeeOut by id
+    const el = $( '#employeeOut');
+    el.empty();
+    //loop through arrayOfEmployees
+    for(let i=0; i<arrayOfEmployees.length; i++){
+        //append each to the table in the DOM
+    el.append( `<td>${arrayOfEmployees[i].fName}</td> 
+    <td>${arrayOfEmployees[i].lName}</td> 
+    <td>${arrayOfEmployees[i].id}</td>
+    <td>${arrayOfEmployees[i].jTitle}</td>
+    <td>${arrayOfEmployees[i].annSal}</td>
+    <td><button type="text"id=deleteBtn >Delete</button></td>`)
+    }
+
+
 }
 
