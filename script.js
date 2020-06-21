@@ -1,26 +1,30 @@
 console.log('js')
 
+//create an empty array of employees for future use
+let arrayOfEmployees=[]
+
+
 $(document).ready(init)
 
 function init(){
     console.log('in jq')
     //setup button click event handler
-    $('#submitBtn').on('click', gatherInput)
+    $('#submitBtn').on('click', handleSubmitClick)
 }
 
-function gatherInput(){
+function handleSubmitClick(){
     //verify that click works
-    console.log('click works')
+    console.log('submit button works')
     event.preventDefault();
 
-
-    //create object to manipulate
+    //get inputs/create object and call addEmployee
     let person = {
-        firstName: $('#firstName').val(),
-        lastName: $('#lastName').val(),
-        idNumber: $('#idNumber').val(),
-        jobTitle: $('#jobTitle').val(),
-        annualSalary: $('#annualSalary').val()
+        fName: $('#firstName').val(),
+        lName: $('#lastName').val(),
+        id: $('#idNumber').val(),
+        jtitle: $('#jobTitle').val(),
+        annSal: $('#annualSalary').val()
     }
-    
+    console.log(person)
 }
+
