@@ -76,13 +76,17 @@ function displayEmployees(arrayOfEmployees){
 
 //display the total monthly cost of employees
 function totalCost(arrayOfEmployees){
+    //target total cost by name
+    const el = $( '#totalCost');
+    el.empty();
     //declare monthly cost
-    let monthlyCost = 0
+    let monthlyCost = 0;
     //loop through array of objects.  Pull the salary divide it by 12 and add to total cost
     for(let i=0; i<arrayOfEmployees.length; i++){
             monthlyCost= monthlyCost + (Number(arrayOfEmployees[i].annSal))/12
-    }
-    console.log(monthlyCost)
+    };
+    //push monthlyCost to the DOM
+    el.append(`Total Monthly Cost= $${monthlyCost}`)
 }
 
 //make the delete button delete the row
