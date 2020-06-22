@@ -16,7 +16,7 @@ This application is designed for an employer to determine their monthly payroll 
 
 ## Screen Shot
 
-SalaryCalculator.png
+![Visible Text](SalaryCalculator.png)
 
 ## Usage
 How does someone use this application? Tell a user story here.
