@@ -89,6 +89,10 @@ function totalCost(arrayOfEmployees){
     };
     //push monthlyCost to the DOM
     el.append(`Total Monthly Cost= $${monthlyCost}`)
+    if (monthlyCost > 20000){
+        console.log('broke the bank')
+        $('#totalMonthlyContainer').addClass('overBudget');
+    }
 }
 
 //make the delete button delete the row
