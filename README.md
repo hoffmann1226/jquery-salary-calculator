@@ -19,7 +19,6 @@ This application is designed for an employer to determine their monthly payroll 
 ![Visible Text](SalaryCalculator.png)
 
 ## Usage
-How does someone use this application? Tell a user story here.
 
 1. Open the application in a browser.  Have your employee employee information handy.
 2. Input employee information: first name, last name, ID, job title, and salary.
